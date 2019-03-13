@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,12 +42,26 @@
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_RegNo = new System.Windows.Forms.TextBox();
             this.txt_Status = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.projectBDataSet = new Lab_Management_System.ProjectBDataSet();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableAdapter = new Lab_Management_System.ProjectBDataSetTableAdapters.StudentTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registrationNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Location = new System.Drawing.Point(154, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
@@ -55,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 93);
+            this.label2.Location = new System.Drawing.Point(154, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
@@ -64,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 57);
+            this.label3.Location = new System.Drawing.Point(154, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 2;
@@ -73,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 131);
+            this.label4.Location = new System.Drawing.Point(154, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 3;
@@ -82,7 +97,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 197);
+            this.label5.Location = new System.Drawing.Point(154, 197);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 4;
@@ -91,7 +106,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 165);
+            this.label6.Location = new System.Drawing.Point(154, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 5;
@@ -99,7 +114,7 @@
             // 
             // btn_AddStudent
             // 
-            this.btn_AddStudent.Location = new System.Drawing.Point(160, 241);
+            this.btn_AddStudent.Location = new System.Drawing.Point(334, 216);
             this.btn_AddStudent.Name = "btn_AddStudent";
             this.btn_AddStudent.Size = new System.Drawing.Size(75, 23);
             this.btn_AddStudent.TabIndex = 6;
@@ -109,52 +124,128 @@
             // 
             // txt_FName
             // 
-            this.txt_FName.Location = new System.Drawing.Point(125, 15);
+            this.txt_FName.Location = new System.Drawing.Point(293, 15);
             this.txt_FName.Name = "txt_FName";
-            this.txt_FName.Size = new System.Drawing.Size(160, 20);
+            this.txt_FName.Size = new System.Drawing.Size(172, 20);
             this.txt_FName.TabIndex = 7;
             this.txt_FName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txt_LName
             // 
-            this.txt_LName.Location = new System.Drawing.Point(125, 50);
+            this.txt_LName.Location = new System.Drawing.Point(293, 50);
             this.txt_LName.Name = "txt_LName";
-            this.txt_LName.Size = new System.Drawing.Size(160, 20);
+            this.txt_LName.Size = new System.Drawing.Size(172, 20);
             this.txt_LName.TabIndex = 8;
             // 
             // txt_Contact
             // 
-            this.txt_Contact.Location = new System.Drawing.Point(125, 86);
+            this.txt_Contact.Location = new System.Drawing.Point(293, 86);
             this.txt_Contact.Name = "txt_Contact";
-            this.txt_Contact.Size = new System.Drawing.Size(160, 20);
+            this.txt_Contact.Size = new System.Drawing.Size(172, 20);
             this.txt_Contact.TabIndex = 9;
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(125, 124);
+            this.txt_Email.Location = new System.Drawing.Point(293, 124);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(160, 20);
+            this.txt_Email.Size = new System.Drawing.Size(172, 20);
             this.txt_Email.TabIndex = 10;
             // 
             // txt_RegNo
             // 
-            this.txt_RegNo.Location = new System.Drawing.Point(125, 158);
+            this.txt_RegNo.Location = new System.Drawing.Point(293, 158);
             this.txt_RegNo.Name = "txt_RegNo";
-            this.txt_RegNo.Size = new System.Drawing.Size(160, 20);
+            this.txt_RegNo.Size = new System.Drawing.Size(172, 20);
             this.txt_RegNo.TabIndex = 11;
             // 
             // txt_Status
             // 
-            this.txt_Status.Location = new System.Drawing.Point(125, 190);
+            this.txt_Status.Location = new System.Drawing.Point(293, 190);
             this.txt_Status.Name = "txt_Status";
-            this.txt_Status.Size = new System.Drawing.Size(160, 20);
+            this.txt_Status.Size = new System.Drawing.Size(172, 20);
             this.txt_Status.TabIndex = 12;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.contactDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.registrationNumberDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.studentBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 270);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(737, 182);
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // projectBDataSet
+            // 
+            this.projectBDataSet.DataSetName = "ProjectBDataSet";
+            this.projectBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "Student";
+            this.studentBindingSource.DataSource = this.projectBDataSet;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // contactDataGridViewTextBoxColumn
+            // 
+            this.contactDataGridViewTextBoxColumn.DataPropertyName = "Contact";
+            this.contactDataGridViewTextBoxColumn.HeaderText = "Contact";
+            this.contactDataGridViewTextBoxColumn.Name = "contactDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // registrationNumberDataGridViewTextBoxColumn
+            // 
+            this.registrationNumberDataGridViewTextBoxColumn.DataPropertyName = "RegistrationNumber";
+            this.registrationNumberDataGridViewTextBoxColumn.HeaderText = "RegistrationNumber";
+            this.registrationNumberDataGridViewTextBoxColumn.Name = "registrationNumberDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             // 
             // StudentManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 321);
+            this.ClientSize = new System.Drawing.Size(775, 447);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_Status);
             this.Controls.Add(this.txt_RegNo);
             this.Controls.Add(this.txt_Email);
@@ -171,6 +262,9 @@
             this.Name = "StudentManagement";
             this.Text = "Student Management";
             this.Load += new System.EventHandler(this.StudentManagement_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +285,16 @@
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.TextBox txt_RegNo;
         private System.Windows.Forms.TextBox txt_Status;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private ProjectBDataSet projectBDataSet;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private ProjectBDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn registrationNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }

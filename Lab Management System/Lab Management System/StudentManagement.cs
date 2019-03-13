@@ -21,6 +21,8 @@ namespace Lab_Management_System
         
         private void StudentManagement_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectBDataSet.Student' table. You can move, or remove it, as needed.
+            this.studentTableAdapter.Fill(this.projectBDataSet.Student);
             SQLServer.Connection.Open();
 
         }
