@@ -16,5 +16,18 @@ namespace Lab_Management_System
         {
             InitializeComponent();
         }
+
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_student_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            StudentManagement temp = new StudentManagement();
+            temp.Show();
+            this.Hide();
+        }
     }
 }

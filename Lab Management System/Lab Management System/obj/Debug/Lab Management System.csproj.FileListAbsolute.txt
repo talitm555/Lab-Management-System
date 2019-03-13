@@ -1,2 +1,11 @@
 C:\Users\talit\Desktop\Lab Management System\Lab Management System\bin\Debug\Lab Management System.exe.config
 F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\bin\Debug\Lab Management System.exe.config
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\bin\Debug\Lab Management System.exe
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\bin\Debug\Lab Management System.pdb
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab Management System.csprojResolveAssemblyReference.cache
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab_Management_System.Dashboard.resources
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab_Management_System.Properties.Resources.resources
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab_Management_System.StudentManagement.resources
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab Management System.csproj.GenerateResource.Cache
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab Management System.exe
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab Management System.pdb
