@@ -1,1 +1,2 @@
 C:\Users\talit\Desktop\Lab Management System\Lab Management System\bin\Debug\Lab Management System.exe.config
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\bin\Debug\Lab Management System.exe.config
