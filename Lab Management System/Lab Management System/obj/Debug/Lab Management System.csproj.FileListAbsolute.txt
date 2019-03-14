@@ -10,3 +10,4 @@ F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Managem
 F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab Management System.exe
 F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab Management System.pdb
 F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab_Management_System.CLOManagement.resources
+F:\TALIT M\UET CS\Semester 6\DBMS Lab\ProjectB\Lab-Management-System\Lab Management System\Lab Management System\obj\Debug\Lab_Management_System.RubricsManagement.resources
