@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lbl_student = new System.Windows.Forms.LinkLabel();
+            this.lbl_CLOManagement = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lbl_student
@@ -42,11 +43,23 @@
             this.lbl_student.Text = "Student Management";
             this.lbl_student.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_student_LinkClicked);
             // 
+            // lbl_CLOManagement
+            // 
+            this.lbl_CLOManagement.AutoSize = true;
+            this.lbl_CLOManagement.Location = new System.Drawing.Point(178, 195);
+            this.lbl_CLOManagement.Name = "lbl_CLOManagement";
+            this.lbl_CLOManagement.Size = new System.Drawing.Size(93, 13);
+            this.lbl_CLOManagement.TabIndex = 2;
+            this.lbl_CLOManagement.TabStop = true;
+            this.lbl_CLOManagement.Text = "CLO Management";
+            this.lbl_CLOManagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_CLOManagement_LinkClicked);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 347);
+            this.Controls.Add(this.lbl_CLOManagement);
             this.Controls.Add(this.lbl_student);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -59,6 +72,7 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel lbl_student;
+        private System.Windows.Forms.LinkLabel lbl_CLOManagement;
     }
 }
 

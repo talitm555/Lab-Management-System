@@ -29,5 +29,12 @@ namespace Lab_Management_System
             temp.Show();
             this.Hide();
         }
+
+        private void lbl_CLOManagement_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CLOManagement temp = new CLOManagement();
+            temp.Show();
+            this.Hide();
+        }
     }
 }
