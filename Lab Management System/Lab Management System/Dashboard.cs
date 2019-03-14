@@ -36,5 +36,12 @@ namespace Lab_Management_System
             temp.Show();
             this.Hide();
         }
+
+        private void lbl_Rubrics_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RubricsManagement temp = new RubricsManagement();
+            temp.Show();
+            this.Hide();
+        }
     }
 }
