@@ -32,11 +32,15 @@ namespace Lab_Management_System
 
         private void RubricsManagement_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectBDataSet6.Clo' table. You can move, or remove it, as needed.
+            this.cloTableAdapter1.Fill(this.projectBDataSet6.Clo);
             // TODO: This line of code loads data into the 'projectBDataSet5.Clo' table. You can move, or remove it, as needed.
             this.cloTableAdapter.Fill(this.projectBDataSet5.Clo);
             SQLServer.Connection.Open();
             // TODO: This line of code loads data into the 'projectBDataSet4.Rubric' table. You can move, or remove it, as needed.
             this.rubricTableAdapter.Fill(this.projectBDataSet4.Rubric);
+            comboBox1.Text = "";
+            comboBox2.Text = "";
             ShowRubricsData();
 
         }
@@ -130,6 +134,33 @@ namespace Lab_Management_System
                     }
                 }
             }
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            comboBox1.Text = "";
+            txt_RubricID.Clear();
+            txt_RubricDetails.Clear();
+            btn_Rubric.Text = "Add Rubric";
+        }
+
+        private void btn_ShowAll_Click(object sender, EventArgs e)
+        {
+            ShowRubricsData();
+            comboBox2.Text = "";
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int cloid = Convert.ToInt32(comboBox2.SelectedValue);
+            string cmd = "SELECT * FROM [dbo].[Rubric] WHERE CloId = '"+ cloid +"'";
+            SqlCommand command2 = new SqlCommand(cmd, SQLServer.Connection);
+            // Add the parameters if required
+            command2.Parameters.Add(new SqlParameter("0", 1));
+            SqlDataReader reader = command2.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            dataGridView1.DataSource = dt;
         }
     }
 }
