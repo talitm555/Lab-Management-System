@@ -13,14 +13,14 @@ namespace Lab_Management_System
 {
     public partial class RubricsManagement : Form
     {
-        public int id;
+        int id;
         public void ShowRubricsData()
         {
-            String cmd = "SELECT * FROM [ProjectB].[dbo].[Rubric]";
-            SqlCommand command = new SqlCommand(cmd, SQLServer.Connection);
+            string cmd = "SELECT * FROM [dbo].[Rubric]";
+            SqlCommand command2 = new SqlCommand(cmd, SQLServer.Connection);
             // Add the parameters if required
-            command.Parameters.Add(new SqlParameter("0", 1));
-            SqlDataReader reader = command.ExecuteReader();
+            command2.Parameters.Add(new SqlParameter("0", 1));
+            SqlDataReader reader = command2.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(reader);
             dataGridView1.DataSource = dt;
@@ -32,56 +32,104 @@ namespace Lab_Management_System
 
         private void RubricsManagement_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'projectBDataSet3.Clo' table. You can move, or remove it, as needed.
-            this.cloTableAdapter2.Fill(this.projectBDataSet3.Clo);
+            // TODO: This line of code loads data into the 'projectBDataSet5.Clo' table. You can move, or remove it, as needed.
+            this.cloTableAdapter.Fill(this.projectBDataSet5.Clo);
             SQLServer.Connection.Open();
+            // TODO: This line of code loads data into the 'projectBDataSet4.Rubric' table. You can move, or remove it, as needed.
+            this.rubricTableAdapter.Fill(this.projectBDataSet4.Rubric);
             ShowRubricsData();
 
         }
 
-        private void btn_Rubrics_Click(object sender, EventArgs e)
+        private void btn_Rubric_Click(object sender, EventArgs e)
         {
-           
-                int txtno = int.Parse(textBox1.Text);
-                int pointX = 30;
-                int pointY = 40;
-                panel2.Controls.Clear();
-                panel1.Controls.Clear();
-                for (int i = 0; i < txtno; i++)
+            if (btn_Rubric.Text == "Add Rubric")
+            {
+                int cloid = Convert.ToInt32(comboBox1.SelectedValue);
+                
+                string query = "INSERT INTO [dbo].[Rubric](Id, Details, CloId) VALUES('" + this.txt_RubricID.Text + "','" + txt_RubricDetails.Text + "','" + cloid + "')";
+                using (SqlCommand command = new SqlCommand(query, SQLServer.Connection))
                 {
-                    TextBox a = new TextBox();
-                    a.Name = "Rubric" + (i + 1).ToString();
-                    a.Location = new Point(pointX, pointY);
+                    int result = command.ExecuteNonQuery();
 
-                    panel1.Controls.Add(a);
-                    panel1.Show();
+                    // Checking Errors.
+                    if (result < 0) MessageBox.Show("An Error occured while adding Rubric into DB!");
+                    // Showing Success Message
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Rubric Added Successfully!");
+                        comboBox1.Text = "";
+                        txt_RubricID.Clear();
+                        txt_RubricDetails.Clear();
+                        ShowRubricsData();
 
-                    pointY += 25;
+                        
+
+                    }
+
                 }
-                pointX = 30;
-                pointY = 40;
-                for (int i = 0; i < txtno; i++)
+
+            }
+
+            else if (btn_Rubric.Text == "Update Rubric")
+            {
+                int cloid = Convert.ToInt32(comboBox1.SelectedValue);
+                string query = "UPDATE [ProjectB].[dbo].[Rubric] SET Id = '" + txt_RubricID.Text + "', Details = '" + txt_RubricDetails.Text + "',CloId = '" + cloid + "' Where id = '" + id + "'";
+                using (SqlCommand command = new SqlCommand(query, SQLServer.Connection))
                 {
+                    int result = command.ExecuteNonQuery();
 
-                    TextBox b = new TextBox();
-                    b.Name = "Id" + (i + 1).ToString();
-                    b.Location = new Point(pointX, pointY);
-                    panel2.Controls.Add(b);
-                    panel2.Show();
-                    pointY += 25;
+                    // Checking Errors.
+                    if (result < 0) MessageBox.Show("An Error occured while Updating Rubric!");
+                    // Showing Success Message
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Rubric Updated Successfully!");
+                        btn_Rubric.Text = "Add Rubric";
+                        comboBox1.Text = "";
+                        txt_RubricID.Clear();
+                        txt_RubricDetails.Clear();
+                        ShowRubricsData();
+                    }
+
                 }
-            
-        }
 
-        private void btn_AddRubrics_Click(object sender, EventArgs e)
-        {
-            
-
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0 && senderGrid.Columns[e.ColumnIndex].HeaderText == "Update")
+            {
+                id = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
+               txt_RubricID.Text = Convert.ToString(dataGridView1[0, e.RowIndex].Value);
+                txt_RubricDetails.Text = Convert.ToString(dataGridView1[1, e.RowIndex].Value);
+                comboBox1.Text = Convert.ToString(dataGridView1[2, e.RowIndex].Value);
+                
+                
+                btn_Rubric.Text = "Update Rubric";
+            }
+            else if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                     e.RowIndex >= 0 && senderGrid.Columns[e.ColumnIndex].HeaderText == "Delete")
+            {
+                id = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
+                String query = "DELETE FROM [ProjectB].[dbo].[Rubric] Where id='" + id + "'";
+                using (SqlCommand command = new SqlCommand(query, SQLServer.Connection))
+                {
+                    int result = command.ExecuteNonQuery();
+
+                    // Checking Errors
+                    if (result < 0) MessageBox.Show("An Error occured while Deleting Rubric from DB!");
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Rubric deleted successfully!");
+                        ShowRubricsData();
+                    }
+                }
+            }
         }
     }
 }
