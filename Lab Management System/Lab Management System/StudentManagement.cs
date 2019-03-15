@@ -171,5 +171,12 @@ namespace Lab_Management_System
                 }
             }
         }
+
+        private void lbl_Dashboard_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Dashboard temp = new Dashboard();
+            temp.Show();
+            this.Hide();
+        }
     }
 }

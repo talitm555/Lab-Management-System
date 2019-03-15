@@ -34,7 +34,7 @@ namespace Lab_Management_System
         private void CLOManagement_Load(object sender, EventArgs e)
         {
             
-            SQLServer.Connection.Open();
+            
             ShowCLOData();
             // TODO: This line of code loads data into the 'projectBDataSetCLO.Clo' table. You can move, or remove it, as needed.
             this.cloTableAdapter.Fill(this.projectBDataSetCLO.Clo);
@@ -117,6 +117,13 @@ namespace Lab_Management_System
 
                 }
             }
+        }
+
+        private void lbl_Dashboard_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Dashboard temp = new Dashboard();
+            temp.Show();
+            this.Hide();
         }
     }
 }

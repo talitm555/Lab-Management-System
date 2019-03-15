@@ -56,6 +56,7 @@
             this.projectBDataSet6 = new Lab_Management_System.ProjectBDataSet6();
             this.cloBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cloTableAdapter1 = new Lab_Management_System.ProjectBDataSet6TableAdapters.CloTableAdapter();
+            this.lbl_Dashboard = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -275,11 +276,23 @@
             // 
             this.cloTableAdapter1.ClearBeforeFill = true;
             // 
+            // lbl_Dashboard
+            // 
+            this.lbl_Dashboard.AutoSize = true;
+            this.lbl_Dashboard.Location = new System.Drawing.Point(465, 385);
+            this.lbl_Dashboard.Name = "lbl_Dashboard";
+            this.lbl_Dashboard.Size = new System.Drawing.Size(59, 13);
+            this.lbl_Dashboard.TabIndex = 13;
+            this.lbl_Dashboard.TabStop = true;
+            this.lbl_Dashboard.Text = "Dashboard";
+            this.lbl_Dashboard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_Dashboard_LinkClicked);
+            // 
             // RubricsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 406);
+            this.Controls.Add(this.lbl_Dashboard);
             this.Controls.Add(this.btn_ShowAll);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -337,5 +350,6 @@
         private ProjectBDataSet6 projectBDataSet6;
         private System.Windows.Forms.BindingSource cloBindingSource1;
         private ProjectBDataSet6TableAdapters.CloTableAdapter cloTableAdapter1;
+        private System.Windows.Forms.LinkLabel lbl_Dashboard;
     }
 }

@@ -36,7 +36,7 @@ namespace Lab_Management_System
             this.cloTableAdapter1.Fill(this.projectBDataSet6.Clo);
             // TODO: This line of code loads data into the 'projectBDataSet5.Clo' table. You can move, or remove it, as needed.
             this.cloTableAdapter.Fill(this.projectBDataSet5.Clo);
-            SQLServer.Connection.Open();
+            
             // TODO: This line of code loads data into the 'projectBDataSet4.Rubric' table. You can move, or remove it, as needed.
             this.rubricTableAdapter.Fill(this.projectBDataSet4.Rubric);
             comboBox1.Text = "";
@@ -161,6 +161,13 @@ namespace Lab_Management_System
             DataTable dt = new DataTable();
             dt.Load(reader);
             dataGridView1.DataSource = dt;
+        }
+
+        private void lbl_Dashboard_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Dashboard temp = new Dashboard();
+            temp.Show();
+            this.Hide();
         }
     }
 }

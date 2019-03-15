@@ -33,19 +33,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_CLO = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.projectBDataSetCLO = new Lab_Management_System.ProjectBDataSetCLO();
-            this.cloBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cloTableAdapter = new Lab_Management_System.ProjectBDataSetCLOTableAdapters.CloTableAdapter();
-            this.btn_Clear = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectBDataSetCLO = new Lab_Management_System.ProjectBDataSetCLO();
+            this.cloTableAdapter = new Lab_Management_System.ProjectBDataSetCLOTableAdapters.CloTableAdapter();
+            this.btn_Clear = new System.Windows.Forms.Button();
+            this.lbl_Dashboard = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSetCLO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSetCLO)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_CLOName
@@ -91,30 +92,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(695, 165);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // projectBDataSetCLO
-            // 
-            this.projectBDataSetCLO.DataSetName = "ProjectBDataSetCLO";
-            this.projectBDataSetCLO.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cloBindingSource
-            // 
-            this.cloBindingSource.DataMember = "Clo";
-            this.cloBindingSource.DataSource = this.projectBDataSetCLO;
-            // 
-            // cloTableAdapter
-            // 
-            this.cloTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_Clear
-            // 
-            this.btn_Clear.Location = new System.Drawing.Point(397, 64);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
-            this.btn_Clear.TabIndex = 15;
-            this.btn_Clear.Text = "Clear";
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -163,11 +140,47 @@
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 75;
             // 
+            // cloBindingSource
+            // 
+            this.cloBindingSource.DataMember = "Clo";
+            this.cloBindingSource.DataSource = this.projectBDataSetCLO;
+            // 
+            // projectBDataSetCLO
+            // 
+            this.projectBDataSetCLO.DataSetName = "ProjectBDataSetCLO";
+            this.projectBDataSetCLO.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cloTableAdapter
+            // 
+            this.cloTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(397, 64);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_Clear.TabIndex = 15;
+            this.btn_Clear.Text = "Clear";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
+            // lbl_Dashboard
+            // 
+            this.lbl_Dashboard.AutoSize = true;
+            this.lbl_Dashboard.Location = new System.Drawing.Point(648, 302);
+            this.lbl_Dashboard.Name = "lbl_Dashboard";
+            this.lbl_Dashboard.Size = new System.Drawing.Size(59, 13);
+            this.lbl_Dashboard.TabIndex = 16;
+            this.lbl_Dashboard.TabStop = true;
+            this.lbl_Dashboard.Text = "Dashboard";
+            this.lbl_Dashboard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_Dashboard_LinkClicked);
+            // 
             // CLOManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 311);
+            this.ClientSize = new System.Drawing.Size(715, 324);
+            this.Controls.Add(this.lbl_Dashboard);
             this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_CLO);
@@ -177,8 +190,8 @@
             this.Text = "CLO Management";
             this.Load += new System.EventHandler(this.CLOManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSetCLO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSetCLO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +213,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateUpdatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.LinkLabel lbl_Dashboard;
     }
 }
